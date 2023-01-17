@@ -36,7 +36,6 @@ public class Start implements CommandExecutor {
         sched.scheduleSyncRepeatingTask(this.plugin, new Runnable() {
 
             int task1;
-            boolean end = false;
             Material mat;
             boolean init = true;
 
