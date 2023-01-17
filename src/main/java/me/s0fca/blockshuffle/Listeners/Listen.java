@@ -27,6 +27,11 @@ public class Listen implements Listener {
         if (bmat.equals(pmat)) {//if you are standing on the block
             this.plugin.plmap.replace(p.getName(), null);
             p.getServer().broadcastMessage(ChatColor.AQUA + "Player " + p.getName() + " has found the block they were looking for");
+            boolean end = plugin.plmap.values().stream().anyMatch(value -> value != null);
+            if (end) {
+                p.getServer().broadcastMessage(ChatColor.YELLOW + "The round has ended");
+                p.getServer().getScheduler().cancelTasks(plugin);
+            }
         }
 
     }
