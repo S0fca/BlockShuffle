@@ -1,0 +1,9 @@
+name: BlockShuffle
+version: '${project.version}'
+main: me.s0fca.blockshuffle.BlockShuffle
+api-version: 1.19
+authors: [ Ash ]
+description: Block Shuffle
+commands:
+  startBlockShuffle:
+  stopBlockShuffle:
