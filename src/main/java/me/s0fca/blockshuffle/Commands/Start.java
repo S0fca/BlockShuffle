@@ -47,7 +47,7 @@ public class Start implements CommandExecutor {
 
                 task1 = sched.scheduleSyncRepeatingTask(plugin, new Runnable() {
 
-                    int cnt = init ? 5 : 10; //cas odpoctu z:k
+                    int cnt = init ? 10 : 30; //cas odpoctu z:k
 
                     @Override
                     public void run() {
@@ -88,8 +88,7 @@ public class Start implements CommandExecutor {
                                         p.getServer().broadcastMessage(ChatColor.AQUA + key + " found their block :)");
                                     }
                                 });
-                                p.getServer().broadcastMessage("The round has ended");
-                                //p.getServer().getScheduler().cancelTasks(plugin);
+                                p.getServer().broadcastMessage(ChatColor.YELLOW+"The round has ended");
                                 sched.cancelTasks(plugin);
                             }
                             sched.cancelTask(task1);
@@ -100,7 +99,7 @@ public class Start implements CommandExecutor {
                 }, 0L, 20L);//20 tics = 1 second
 
             }
-        }, 0L, 600L);//5400
+        }, 0L, 5400L);//6000 = 5 min.
         return false;
     }
 }
